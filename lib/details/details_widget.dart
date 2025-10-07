@@ -198,6 +198,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                           .labelMedium
                                           .fontStyle,
                                     ),
+                                    fontSize: 20.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .labelMedium
@@ -270,6 +271,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -405,6 +407,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                         .bodyMedium
                                         .fontStyle,
                                   ),
+                                  fontSize: 18.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -443,12 +446,12 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             text: 'Update Task',
                             options: FFButtonOptions(
                               width: double.infinity,
-                              height: 70.0,
+                              height: 55.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xFF0DF015),
                               textStyle: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
