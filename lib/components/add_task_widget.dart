@@ -343,7 +343,7 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                         EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFF0DF015),
                     textStyle:
                         FlutterFlowTheme.of(context).labelMedium.override(
                               font: GoogleFonts.inter(

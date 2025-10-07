@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/components/add_task_widget.dart';
 import '/components/task_widget.dart';
@@ -76,7 +77,7 @@ class _TasksWidgetState extends State<TasksWidget> {
             width: double.infinity,
             height: double.infinity,
             decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primary,
+              color: Color(0xFF0DF015),
               borderRadius: BorderRadius.circular(50.0),
               border: Border.all(
                 color: FlutterFlowTheme.of(context).primaryText,
@@ -118,7 +119,7 @@ class _TasksWidgetState extends State<TasksWidget> {
                                       .headlineMedium
                                       .fontStyle,
                                 ),
-                                fontSize: 18.0,
+                                fontSize: 22.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .headlineMedium
@@ -202,6 +203,57 @@ class _TasksWidgetState extends State<TasksWidget> {
                           },
                         );
                       },
+                    ),
+                  ),
+                  InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      _model.apiResult30o = await QutoeCall.call();
+
+                      if ((_model.apiResult30o?.succeeded ?? true)) {
+                        _model.apiResult487 = await QutoeCall.call();
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              '',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: Duration(milliseconds: 4000),
+                            backgroundColor: Color(0xFFF25757),
+                          ),
+                        );
+                      }
+
+                      safeSetState(() {});
+                    },
+                    child: Text(
+                      getJsonField(
+                        (_model.apiResult487?.jsonBody ?? ''),
+                        r'''$[:].q''',
+                      ).toString(),
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            font: GoogleFonts.inter(
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                            ),
+                            letterSpacing: 0.0,
+                            fontWeight: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontWeight,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                     ),
                   ),
                 ].divide(SizedBox(height: 12.0)),
